@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GoogleAuth from "./GoogleAuth";
 
 const Header = () => {
   return (
@@ -27,9 +28,9 @@ const Header = () => {
                 <i aria-hidden="true" className="search icon"></i>
               </div>
             </div>
-            <Link to="/" className="item">
-              Logout
-            </Link>
+            <div className="item">
+              <GoogleAuth />
+            </div>
           </div>
         </div>
       </div>

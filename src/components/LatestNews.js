@@ -29,26 +29,45 @@ class LatestNews extends Component {
     if (this.props.isLoading) {
       return (
         <React.Fragment>
-          <h1>Loading...</h1>
+          <h1 style={{ textAlign: "center", paddingTop: "150px" }}>
+            Loading...
+          </h1>
         </React.Fragment>
       );
     } else if (this.props.error !== null) {
       return (
         <React.Fragment>
-          <h1>{this.props.error.message}</h1>
+          <h1 style={{ textAlign: "center", paddingTop: "150px" }}>
+            {this.props.error.message}
+          </h1>
         </React.Fragment>
       );
     }
     return (
       <React.Fragment>
-        <div>
-          {Object.values(this.props.newsList).map((news) => (
+        <div style={{ background: "#000" }}>
+          {Object.values(this.props.newsList).map((news, index) => (
             <div className="ui centered cards">
               <div className="ui card" style={{ width: "50%" }}>
+                <div className="image">
+                  <img
+                    src={news.multimedia[0].url}
+                    style={{ height: "300px" }}
+                    alt="news"
+                  />
+                </div>
                 <div className="content">
                   <div className="header">{news.title}</div>
                   <div className="meta">{news.byline}</div>
                   <div className="description">{news.abstract}</div>
+                  <div>
+                    <a href={news.url} target="_blank">
+                      <button className="ui primary icon right labeled button">
+                        <i aria-hidden="true" className="right arrow icon"></i>
+                        Read more
+                      </button>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

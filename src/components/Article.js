@@ -33,19 +33,43 @@ class Article extends Component {
     if (this.props.isLoading) {
       return (
         <React.Fragment>
-          <h1>Loading...</h1>
+          <h1 style={{ textAlign: "center", paddingTop: "150px" }}>
+            Loading...
+          </h1>
         </React.Fragment>
       );
     } else if (this.props.error !== null) {
       return (
         <React.Fragment>
-          <h1>{this.props.error.message}</h1>
+          <h1 style={{ textAlign: "center", paddingTop: "150px" }}>
+            {this.props.error.message}
+          </h1>
         </React.Fragment>
       );
     }
     return (
       <React.Fragment>
-        <h1>Articles</h1>
+        <div style={{ background: "#000" }}>
+          <h1 style={{ color: "#FFF", textAlign: "center" }}>Articles</h1>
+          {Object.values(this.props.articleList).map((article) => (
+            <div className="ui card centered" style={{ width: "45%" }}>
+              <div className="content">
+                <div className="header">{article.title}</div>
+              </div>
+              <div className="content">
+                <div className="description">{article.abstract}</div>
+              </div>
+              <div class="extra content">
+                <a href={article.url} target="_blank">
+                  <button className="ui primary icon right labeled button">
+                    <i aria-hidden="true" className="right arrow icon"></i>
+                    Read more
+                  </button>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </React.Fragment>
     );
   }

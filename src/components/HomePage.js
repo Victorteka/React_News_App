@@ -10,8 +10,6 @@ class HomePage extends Component {
     this.makeApiRequest()
       .then((response) => {
         this.props.getNewsSuccess(response.data.results);
-        console.log(response.data.results);
-        console.log(this.props.newsList[0]);
       })
       .catch((error) => {
         this.props.getNewsFailure(error);
@@ -31,17 +29,21 @@ class HomePage extends Component {
     if (this.props.isLoading) {
       displayNews = (
         <div>
-          <h1>Loading...</h1>
+          <h1 style={{ textAlign: "center", paddingTop: "150px" }}>
+            Loading...
+          </h1>
         </div>
       );
     } else if (this.props.error !== null) {
       displayNews = (
         <div>
-          <h1>{this.props.error.message}</h1>
+          <h1 style={{ textAlign: "center", paddingTop: "120px" }}>
+            {this.props.error.message}
+          </h1>
         </div>
       );
     } else {
-      displayNews = <div></div>;
+      displayNews = "";
     }
     const homeContainer = {
       backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(${BackgroundPicture})`,

@@ -61,7 +61,7 @@ class LatestNews extends Component {
                   <div className="meta">{news.byline}</div>
                   <div className="description">{news.abstract}</div>
                   <div>
-                    <a href={news.url} target="_blank">
+                    <a href={news.url}>
                       <button className="ui primary icon right labeled button">
                         <i aria-hidden="true" className="right arrow icon"></i>
                         Read more

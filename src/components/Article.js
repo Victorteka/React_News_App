@@ -60,7 +60,7 @@ class Article extends Component {
                 <div className="description">{article.abstract}</div>
               </div>
               <div class="extra content">
-                <a href={article.url} target="_blank">
+                <a href={article.url}>
                   <button className="ui primary icon right labeled button">
                     <i aria-hidden="true" className="right arrow icon"></i>
                     Read more

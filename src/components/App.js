@@ -1,9 +1,10 @@
 import React from "react";
+import LandingPage from "./LandingPage";
 
 function App() {
   return (
     <React.Fragment>
-      <h1>Latest news</h1>
+      <LandingPage />
     </React.Fragment>
   );
 }

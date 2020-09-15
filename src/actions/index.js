@@ -13,3 +13,17 @@ export const getNewsFailure = (error) => ({
   type: c.GET_NEWS_FAILURE,
   error,
 });
+
+export const requestArticles = () => ({
+  type: c.REQUEST_ARTICLES,
+});
+
+export const getArticlesSuccess = (news) => ({
+  type: c.GET_ARTICLES_SUCCESS,
+  news,
+});
+
+export const getArticlesFailure = (error) => ({
+  type: c.GET_ARTICLES_FAILURE,
+  error,
+});

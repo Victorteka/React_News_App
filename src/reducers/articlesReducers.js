@@ -2,7 +2,7 @@ import * as c from "../actions/ActionTypes";
 
 const INITIAL_STATE = {
   isLoading: false,
-  news: [],
+  articles: [],
   error: null,
 };
 

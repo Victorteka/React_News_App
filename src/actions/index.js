@@ -18,9 +18,9 @@ export const requestArticles = () => ({
   type: c.REQUEST_ARTICLES,
 });
 
-export const getArticlesSuccess = (news) => ({
+export const getArticlesSuccess = (articles) => ({
   type: c.GET_ARTICLES_SUCCESS,
-  news,
+  articles,
 });
 
 export const getArticlesFailure = (error) => ({

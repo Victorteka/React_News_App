@@ -9,11 +9,19 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case c.REQUEST_NEWS:
-      return { ...state, isLoading: true };
+      return Object.assign({}, state, {
+        isLoading: true,
+      });
     case c.GET_NEWS_SUCCESS:
-      return { ...state, news: action.news };
+      return Object.assign({}, state, {
+        isLoading: false,
+        news: action.news,
+      });
     case c.GET_NEWS_FAILURE:
-      return { ...state, error: action.error };
+      return Object.assign({}, state, {
+        isLoading: false,
+        error: action.error,
+      });
     default:
       return state;
   }

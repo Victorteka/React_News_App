@@ -2,12 +2,28 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { requestNews, getNewsFailure, getNewsSuccess } from "../actions";
-// import API from "../api";
+import API from "../api";
 
 class LatestNews extends Component {
   componentDidMount() {
-    this.props.requestNews();
+    this.makeApiRequest()
+      .then((response) => {
+        this.props.getNewsSuccess(response.data.results);
+        console.log(response.data.results);
+      })
+      .catch((error) => {
+        this.props.getNewsFailure(error);
+        console.log(error);
+      });
   }
+
+  //make API request
+  makeApiRequest = () => {
+    this.props.requestNews();
+    return API.get(
+      `svc/topstories/v2/world.json?api-key=${process.env.REACT_APP_NYT_API_KEY}`
+    );
+  };
 
   render() {
     if (this.props.isLoading) {
@@ -19,7 +35,7 @@ class LatestNews extends Component {
     } else if (this.props.error !== null) {
       return (
         <React.Fragment>
-          <h1>{this.props.error}</h1>
+          <h1>{this.props.error.message}</h1>
         </React.Fragment>
       );
     }

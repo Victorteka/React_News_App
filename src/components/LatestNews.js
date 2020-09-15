@@ -41,7 +41,19 @@ class LatestNews extends Component {
     }
     return (
       <React.Fragment>
-        <h1>Latest news</h1>
+        <div>
+          {Object.values(this.props.newsList).map((news) => (
+            <div className="ui centered cards">
+              <div className="ui card" style={{ width: "50%" }}>
+                <div className="content">
+                  <div className="header">{news.title}</div>
+                  <div className="meta">{news.byline}</div>
+                  <div className="description">{news.abstract}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </React.Fragment>
     );
   }

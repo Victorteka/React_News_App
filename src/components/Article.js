@@ -25,7 +25,7 @@ class Article extends Component {
   makeApiRequest = () => {
     this.props.requestArticles();
     return API.get(
-      `svc/topstories/v2/world.json?api-key=${process.env.REACT_APP_NYT_API_KEY}`
+      `svc/mostpopular/v2/shared/1/facebook.json?api-key=${process.env.REACT_APP_NYT_API_KEY}`
     );
   };
 

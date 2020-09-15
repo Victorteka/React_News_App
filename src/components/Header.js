@@ -13,7 +13,7 @@ const Header = () => {
           </div>
           <div className="right menu">
             <div className="item">
-              <Link to="/" className="active item">
+              <Link to="/" className="item">
                 Home
               </Link>
               <Link to="latest-news" className="item">

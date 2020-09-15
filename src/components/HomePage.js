@@ -11,6 +11,7 @@ class HomePage extends Component {
       .then((response) => {
         this.props.getNewsSuccess(response.data.results);
         console.log(response.data.results);
+        console.log(this.props.newsList[0]);
       })
       .catch((error) => {
         this.props.getNewsFailure(error);
@@ -24,6 +25,7 @@ class HomePage extends Component {
       `svc/topstories/v2/world.json?api-key=${process.env.REACT_APP_NYT_API_KEY}`
     );
   };
+
   render() {
     let displayNews = null;
     if (this.props.isLoading) {
@@ -39,11 +41,7 @@ class HomePage extends Component {
         </div>
       );
     } else {
-      displayNews = (
-        <div>
-          <h1>Latest news</h1>
-        </div>
-      );
+      displayNews = <div></div>;
     }
     const homeContainer = {
       backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(${BackgroundPicture})`,

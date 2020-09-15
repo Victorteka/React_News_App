@@ -27,7 +27,9 @@ const Header = () => {
                 <i aria-hidden="true" className="search icon"></i>
               </div>
             </div>
-            <Link className="item">Logout</Link>
+            <Link to="/" className="item">
+              Logout
+            </Link>
           </div>
         </div>
       </div>

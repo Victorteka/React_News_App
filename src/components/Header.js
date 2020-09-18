@@ -28,9 +28,9 @@ const Header = () => {
                 <i aria-hidden="true" className="search icon"></i>
               </div>
             </div>
-            <div className="item">
+            {/* <div className="item">
               <GoogleAuth />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

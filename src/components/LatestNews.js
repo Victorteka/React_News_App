@@ -46,14 +46,15 @@ class LatestNews extends Component {
     return (
       <React.Fragment>
         <div style={{ background: "#000" }}>
-          {Object.values(this.props.newsList).map((news) => (
-            <div className="ui centered cards">
+          {Object.values(this.props.newsList).map((news, index) => (
+            <div className="ui centered cards" key={index}>
               <div className="ui card" style={{ width: "50%" }}>
-                {/* {console.log(news.multimedia[0].url)} */}
-                {/* <div className="image">
-                  <img src={news.multimedia[0].url} alt="news" />
-                  {console.log(news.multimedia[0].url)}
-                </div> */}
+                <div className="image">
+                  <img
+                    src={news.multimedia ? news.multimedia[0].url : ""}
+                    alt="newssff"
+                  />
+                </div>
                 <div className="content">
                   <div className="header">{news.title}</div>
                   <div className="meta">{news.byline}</div>

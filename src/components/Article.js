@@ -51,15 +51,19 @@ class Article extends Component {
       <React.Fragment>
         <div style={{ background: "#000" }}>
           <h1 style={{ color: "#FFF", textAlign: "center" }}>Articles</h1>
-          {Object.values(this.props.articleList).map((article) => (
-            <div className="ui card centered" style={{ width: "45%" }}>
+          {Object.values(this.props.articleList).map((article, index) => (
+            <div
+              className="ui card centered"
+              style={{ width: "45%" }}
+              key={index}
+            >
               <div className="content">
                 <div className="header">{article.title}</div>
               </div>
               <div className="content">
                 <div className="description">{article.abstract}</div>
               </div>
-              <div class="extra content">
+              <div className="extra content">
                 <a href={article.url}>
                   <button className="ui primary icon right labeled button">
                     <i aria-hidden="true" className="right arrow icon"></i>
